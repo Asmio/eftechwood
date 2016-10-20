@@ -1,14 +1,13 @@
 package com.eftech.wood.entity;
 
 import java.io.Serializable;
+import java.text.DateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 /**
  * The persistent class for the errors database table.
@@ -24,9 +23,8 @@ public class Errors implements Serializable {
 
     private String action;
 
-    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "date_error")
-    private Date dateError;
+    private String dateError;
 
     @Column(name = "error_description")
     private String errorDescription;
@@ -37,6 +35,7 @@ public class Errors implements Serializable {
     public Errors(String action, String errorDescription) {
 	this.action = action;
 	this.errorDescription = errorDescription;
+	this.dateError = DateToString(new Date());
     }
 
     public int getIderrors() {
@@ -55,12 +54,12 @@ public class Errors implements Serializable {
 	this.action = action;
     }
 
-    public Date getDateError() {
+    public String getDateError() {
 	return this.dateError;
     }
 
     public void setDateError(Date dateError) {
-	this.dateError = dateError;
+	this.dateError = DateToString(dateError);
     }
 
     public String getErrorDescription() {
@@ -69,6 +68,15 @@ public class Errors implements Serializable {
 
     public void setErrorDescription(String errorDescription) {
 	this.errorDescription = errorDescription;
+    }
+
+    private String DateToString(Date date) {
+	String result = "";
+	DateFormat df = DateFormat.getDateInstance(DateFormat.DEFAULT);
+	result += df.format(date);
+	df = DateFormat.getTimeInstance(DateFormat.DEFAULT);
+	result += " " + df.format(date);
+	return result;
     }
 
 }

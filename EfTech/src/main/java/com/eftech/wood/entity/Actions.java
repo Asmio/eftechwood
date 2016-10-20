@@ -1,14 +1,13 @@
 package com.eftech.wood.entity;
 
 import java.io.Serializable;
+import java.text.DateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 /**
  * The persistent class for the actions database table.
@@ -22,9 +21,8 @@ public class Actions implements Serializable {
     @Id
     private int idaction;
 
-    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "date_action")
-    private Date dateAction;
+    private String dateAction;
 
     private String username;
 
@@ -37,6 +35,7 @@ public class Actions implements Serializable {
     public Actions(String username, String whatIsDone) {
 	this.username = username;
 	this.whatIsDone = whatIsDone;
+	this.dateAction = DateToString(new Date());
     }
 
     public int getIdaction() {
@@ -47,12 +46,12 @@ public class Actions implements Serializable {
 	this.idaction = idaction;
     }
 
-    public Date getDateAction() {
+    public String getDateAction() {
 	return this.dateAction;
     }
 
     public void setDateAction(Date dateAction) {
-	this.dateAction = dateAction;
+	this.dateAction = DateToString(dateAction);
     }
 
     public String getUsername() {
@@ -69,6 +68,15 @@ public class Actions implements Serializable {
 
     public void setWhatIsDone(String whatIsDone) {
 	this.whatIsDone = whatIsDone;
+    }
+
+    private String DateToString(Date date) {
+	String result = "";
+	DateFormat df = DateFormat.getDateInstance(DateFormat.DEFAULT);
+	result += df.format(date);
+	df = DateFormat.getTimeInstance(DateFormat.DEFAULT);
+	result += " " + df.format(date);
+	return result;
     }
 
 }

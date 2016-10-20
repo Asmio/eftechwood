@@ -1,6 +1,8 @@
 package com.eftech.wood.entity;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,6 +41,7 @@ public class Indent implements Serializable {
     private String dateOrder;
 
     public Indent() {
+	this.dateOrder = DateToString(new Date());
     }
 
     public int getIdorder() {
@@ -101,8 +104,17 @@ public class Indent implements Serializable {
 	return dateOrder;
     }
 
-    public void setDateOrder(String dateOrder) {
-	this.dateOrder = dateOrder;
+    public void setDateOrder(Date dateOrder) {
+	this.dateOrder = DateToString(dateOrder);
+    }
+
+    private String DateToString(Date date) {
+	String result = "";
+	DateFormat df = DateFormat.getDateInstance(DateFormat.DEFAULT);
+	result += df.format(date);
+	df = DateFormat.getTimeInstance(DateFormat.DEFAULT);
+	result += " " + df.format(date);
+	return result;
     }
 
 }
