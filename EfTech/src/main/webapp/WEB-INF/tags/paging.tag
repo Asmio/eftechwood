@@ -7,6 +7,25 @@
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/assets/js/jquery-1.10.2.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/jquery-migrate-1.2.1.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/bootstrap.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/gmap3.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/bootstrap-hover-dropdown.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/owl.carousel.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/css_browser_selector.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/echo.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/bootstrap-slider.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/jquery.raty.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/jquery.prettyPhoto.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/jquery.customSelect.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/wow.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/scripts.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/js.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/init-slider.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
 
 <c:if test="${pagedListHolder.pageCount > 1}">
 	<ul class="pagination pagination-sm">
