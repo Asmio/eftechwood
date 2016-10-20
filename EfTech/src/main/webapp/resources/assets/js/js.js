@@ -86,4 +86,6 @@ function addToCart(product, id){
 	});
 }
 
-$(document).ready(initPage());
+window.onload = function() {
+	initPage();
+};
