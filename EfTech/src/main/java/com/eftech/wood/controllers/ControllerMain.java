@@ -60,23 +60,35 @@ public class ControllerMain {
 	try {
 	    List<Plywood> listPlywood = plywoodService.findAll();
 	    List<ParticleBoard> listParticleBoard = particleBoardService.findAll();
-	    if (listPlywood.size() > 0) {
+	    int countPlywood = listPlywood.size();
+	    int countParticleBoard = listParticleBoard.size();
+	    int counter = 3;
+	    if (countPlywood > 0) {
+		if (countPlywood < 3) {
+		    counter = countPlywood;
+		}
 		List<Plywood> sliderList = new ArrayList<Plywood>();
-		for (int i = 1; i <= 3; i++) {
+		for (int i = 1; i <= counter; i++) {
 		    sliderList.add(listPlywood.get(listPlywood.size() - i));
 		}
 		modelAndView.addObject("sliderList", sliderList);
 	    }
-	    if (listPlywood.size() > 0) {
+	    if (countPlywood > 0) {
+		if (countPlywood < 3) {
+		    counter = countPlywood;
+		}
 		List<Plywood> recentlyUplPl = new ArrayList<Plywood>();
-		for (int i = 1; i <= 3; i++) {
+		for (int i = 1; i <= counter; i++) {
 		    recentlyUplPl.add(listPlywood.get(listPlywood.size() - i));
 		}
 		modelAndView.addObject("recentlyUplPl", recentlyUplPl);
 	    }
-	    if (listParticleBoard.size() > 0) {
+	    if (countParticleBoard > 0) {
+		if (countParticleBoard < 3) {
+		    counter = countParticleBoard;
+		}
 		List<ParticleBoard> recentlyUplPB = new ArrayList<ParticleBoard>();
-		for (int i = 1; i <= 3; i++) {
+		for (int i = 1; i <= counter; i++) {
 		    recentlyUplPB.add(listParticleBoard.get(listParticleBoard.size() - i));
 		}
 		modelAndView.addObject("recentlyUplPB", recentlyUplPB);
