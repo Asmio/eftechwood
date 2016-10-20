@@ -177,7 +177,7 @@
 					                        <div class="product-item">
 					                            <div class="image">
 					                                <a href="${pageContext.request.contextPath}/single-product.html?product=<%=session.getAttribute("product")%>&id=${item.product_ID}">
-					                                	<img class="img_products" alt="" src="${pageContext.request.contextPath}/resources/assets/images/blank.gif" data-echo="${pageContext.request.contextPath}/resources/assets/images/products/${item.foto_1}" />
+					                                	<img class="img_products" alt="" src="${pageContext.request.contextPath}/resources/assets/images/products/${item.foto_1}"/>
 					                            	</a>
 					                            </div>
 					                            <div class="body">
