@@ -3,14 +3,6 @@ function chg(id){
     	el.src = id.src;
 }
 
-function initPage(){
-	$("#thicknessSlider").slider({});
-	$("#lengthSlider").slider({});
-	$("#weightSlider").slider({});
-	$("#laminatedSlider").slider({});
-	$("#priceSlider").slider({});
-}
-
 function updateCompareList(product, id){
 	$.ajax({
         url: window.location.pathname.substring(0, window.location.pathname.indexOf("/",2)) + '/updateCompareList',
@@ -85,7 +77,3 @@ function addToCart(product, id){
         }
 	});
 }
-
-window.onload = function() {
-	initPage();
-};

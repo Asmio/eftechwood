@@ -256,6 +256,7 @@
     <script src="${pageContext.request.contextPath}/resources/assets/js/wow.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/assets/js/scripts.js"></script>
     <script src="${pageContext.request.contextPath}/resources/assets/js/js.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/init-slider.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
