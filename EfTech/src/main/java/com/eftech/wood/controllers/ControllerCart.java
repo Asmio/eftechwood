@@ -26,7 +26,6 @@ import com.eftech.wood.entity.Indent;
 import com.eftech.wood.entity.ParticleBoard;
 import com.eftech.wood.entity.Plywood;
 import com.eftech.wood.helper.EmailSender;
-import com.eftech.wood.helper.ManagementResourses;
 import com.eftech.wood.service.ActionsService;
 import com.eftech.wood.service.CartService;
 import com.eftech.wood.service.EmailRecipientService;
@@ -43,6 +42,8 @@ public class ControllerCart {
 
     private static final String PRODUCT_PLYWOOD = "Plywood";
     private static final String PRODUCT_PARTICLE_BOARD = "ParticleBoard";
+    private static final String EMAIL_LOGIN = "webhosting003@gmail.com";
+    private static final String EMAIL_PASSWORD = "webhosting1q2w3e";
 
     @Autowired
     private PlywoodService plywoodService;
@@ -329,8 +330,7 @@ public class ControllerCart {
 	    indent.setStatus("Open");
 	    indentService.save(indent);
 
-	    EmailSender emailSender = new EmailSender(ManagementResourses.getValue("email.login"),
-		    ManagementResourses.getValue("email.password"));
+	    EmailSender emailSender = new EmailSender(EMAIL_LOGIN, EMAIL_PASSWORD);
 	    String message = messageSource.getMessage("main.checkout.fio_customer", null, locale) + ": "
 		    + indent.getFioCustomer() + ",\n"
 		    + messageSource.getMessage("main.checkout.phone_customer", null, locale) + ": "
